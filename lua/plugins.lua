@@ -411,6 +411,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-rust-tool")
     end,
+    enabled = false,
   },
 
   "rust-lang/rust.vim",

@@ -18,4 +18,5 @@ require("config.autocmds")
 local plugins = require("plugins")
 require("lazy").setup(plugins)
 require("config.keymaps")
-require("plugin-config.lsp.init")
+-- NOTE: Disable LSP
+-- require("plugin-config.lsp.init")
