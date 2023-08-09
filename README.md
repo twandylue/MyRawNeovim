@@ -1,16 +1,8 @@
-# MyNeovim
+# My Raw Neovim
 
-My Neovim configuration in MacOS and Win
+My Neovim configuration without LSP.
 
 ## External Dependencies
-
-### LSP
-
-- npm(>=7.10.0)
-- node(>=16.0.0)
-- yarn(>=1.22.15)
-- Go (for [sqls](https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#sqls))
-- dotnet 6 (for [csharp_ls](https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#csharp-language-server) and [csharpier](https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#csharpier))
 
 ### nvim-treesitter
 
@@ -36,16 +28,6 @@ My Neovim configuration in MacOS and Win
 - A C++ compiler(C++14 support)
 
 > **important**: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compile
-
-### rest.nvim
-
-- curl
-- [jq](https://github.com/stedolan/jq)
-
-## ChatGPT.nvim
-
-- curl
-- [OPENAI_API_KEY](https://beta.openai.com/account/api-keys) as environment variable `$OPENAI_API_KEY`
 
 ## References
 

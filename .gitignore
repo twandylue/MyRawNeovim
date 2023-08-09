@@ -1,5 +1,1 @@
-autoload/
-node_modules/
-plugged/
-plugin/
 *.lock
