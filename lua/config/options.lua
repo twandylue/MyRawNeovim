@@ -65,8 +65,6 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 -- 样式
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
--- highlight trailing whitespace
--- vim.fn.matchadd("errorMsg", [[\s\+$]])
 vim.opt.list = true
 vim.opt.listchars = { trail = ".", eol = "↵", tab = ">~", space = ".", precedes = "<", extends = ">" }
 -- 补全增强
@@ -86,9 +84,6 @@ vim.o.guicursor = "i:block"
 vim.o.guicursor = "a:blinkon1"
 -- set command history
 vim.o.history = 150
--- Disable netrw
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
 
 -- native package used for quickfix in vim
 vim.cmd([[
