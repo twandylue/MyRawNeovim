@@ -7,11 +7,12 @@ end
 -- local lspkind = require("lspkind")
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  },
+  -- NOTE: Disable LSP
+  -- snippet = {
+  --   expand = function(args)
+  --     require("luasnip").lsp_expand(args.body)
+  --   end,
+  -- },
   mapping = cmp.mapping.preset.insert({
     ["<C-y>"] = cmp.mapping.scroll_docs(-4),
     ["<C-e>"] = cmp.mapping.scroll_docs(4),
@@ -27,11 +28,13 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
+    -- NOTE: Disable LSP
+    -- { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "neorg" },
   }),
   formatting = {
+    -- NOTE: Disable LSP
     -- format = lspkind.cmp_format({
     --   writh_text = false,
     --   maxwidth = 50,

@@ -30,9 +30,6 @@ local plugins = {
     enabled = true,
   },
 
-  -- colorscheme: gruvbox-baby
-  "luisiacc/gruvbox-baby",
-
   -- colorscheme: catppuccin
   {
     "catppuccin/nvim",
@@ -90,28 +87,6 @@ local plugins = {
     enabled = false,
   },
 
-  -- colorscheme: base16
-  {
-    "RRethy/nvim-base16",
-    enabled = false,
-  },
-
-  {
-    "tpope/vim-vinegar",
-    enabled = false,
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("plugin-config.nvim-tree")
-    end,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    enabled = false,
-  },
-
   {
     "stevearc/oil.nvim",
     config = function()
@@ -149,15 +124,6 @@ local plugins = {
     end,
   },
 
-  {
-    "TimUntersberger/neogit",
-    config = function()
-      require("plugin-config.nvim-neogit")
-    end,
-    dependencies = "nvim-lua/plenary.nvim",
-    enabled = false,
-  },
-
   -- git-fugitive
   "tpope/vim-fugitive",
 
@@ -182,22 +148,6 @@ local plugins = {
   "easymotion/vim-easymotion",
 
   {
-    "ggandor/leap.nvim",
-    config = function()
-      require("plugin-config.nvim-leap")
-    end,
-    enabled = false,
-  },
-
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("plugin-config.nvim-comment")
-    end,
-    lazy = false,
-  },
-
-  {
     "folke/todo-comments.nvim",
     config = function()
       require("plugin-config.nvim-todo-comments")
@@ -219,8 +169,6 @@ local plugins = {
     end,
   },
 
-  { "lukas-reineke/indent-blankline.nvim", enabled = false },
-
   {
     "kylechui/nvim-surround",
     config = function()
@@ -230,16 +178,6 @@ local plugins = {
 
   -- exchange text object ( NOTE: `cxc` to cancel)
   "gbprod/substitute.nvim",
-
-  {
-    "akinsho/bufferline.nvim",
-    version = "v3.*",
-    config = function()
-      require("plugin-config.nvim-bufferline")
-    end,
-    dependencies = "nvim-tree/nvim-web-devicons",
-    enabled = false,
-  },
 
   {
     "norcalli/nvim-colorizer.lua",
@@ -352,7 +290,8 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
+      -- NOTE: Disable LSP
+      -- "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
     },
     config = function()
@@ -361,7 +300,7 @@ local plugins = {
   },
 
   -- Configurations for Nvim LSP
-  "neovim/nvim-lspconfig",
+  { "neovim/nvim-lspconfig", enabled = false },
 
   -- LSP UIs
   {
@@ -438,20 +377,6 @@ local plugins = {
     end,
   },
 
-  -- Mason null-ls installer and manager
-  {
-    "jay-babu/mason-null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "williamboman/mason.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
-    },
-    config = function()
-      require("plugin-config.nvim-mason-null-ls")
-    end,
-    enabled = false,
-  },
-
   {
     "L3MON4D3/LuaSnip",
     config = function()
@@ -469,14 +394,6 @@ local plugins = {
     end,
   },
 
-  {
-    "simrat39/symbols-outline.nvim",
-    config = function()
-      require("plugin-config.nvim-outline")
-    end,
-    enabled = false,
-  },
-
   "tommcdo/vim-exchange",
 
   {
@@ -492,14 +409,6 @@ local plugins = {
   },
 
   {
-    "b0o/incline.nvim",
-    config = function()
-      require("plugin-config.nvim-incline")
-    end,
-    enabled = false,
-  },
-
-  {
     "nvim-zh/colorful-winsep.nvim",
     config = function()
       require("plugin-config.nvim-colorful-winsep")
@@ -508,25 +417,6 @@ local plugins = {
 
   -- neodev for lua in neovim
   "folke/neodev.nvim",
-
-  {
-    "stevearc/aerial.nvim",
-    config = function()
-      require("plugin-config.nvim-aerial")
-    end,
-    enabled = false,
-  },
-
-  -- TODO: need to be removed
-  -- null-ls
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require("plugin-config.nvim-null-ls")
-    end,
-    dependencies = { "nvim-lua/plenary.nvim" },
-    enabled = false,
-  },
 
   -- lint
   {
