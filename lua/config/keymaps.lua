@@ -63,16 +63,11 @@ else
 end
 
 -- With Plugins
--- nvim-tree
--- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
--- vinegar style.
--- map("n", "<leader>e", "<cmd>lua require'nvim-tree'.open_replacing_current_buffer()<CR>", opts)
--- map("n", "<leader>e", "<cmd>Sexplore<CR>", opts)
 map("n", "<leader>e", "<cmd>Oil<CR>", opts)
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- gitsigns
--- <c-w>w => could focus on preview window
+-- NOTE: <c-w>w => could focus on preview window
 map("n", "<leader>g]", "<cmd>Gitsigns next_hunk<CR>", opts)
 map("n", "<leader>g[", "<cmd>Gitsigns prev_hunk<CR>", opts)
 map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", opts)
