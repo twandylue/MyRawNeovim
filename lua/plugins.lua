@@ -176,6 +176,7 @@ local plugins = {
   {
     "arkav/lualine-lsp-progress",
     dependencies = "nvim-lualine/lualine.nvim",
+    enabled = false,
   },
 
   "easymotion/vim-easymotion",
@@ -344,7 +345,7 @@ local plugins = {
   },
 
   -- vscode-like pictograms
-  "onsails/lspkind-nvim",
+  { "onsails/lspkind-nvim", enabled = false },
 
   -- Completion
   {
@@ -370,6 +371,7 @@ local plugins = {
       require("plugin-config.nvim-lspsaga")
     end,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    enabled = false,
   },
 
   {
@@ -382,6 +384,7 @@ local plugins = {
       "SmiteshP/nvim-navic",
       "MunifTanjim/nui.nvim",
     },
+    enabled = false,
   },
 
   {
@@ -389,6 +392,7 @@ local plugins = {
     config = function()
       require("plugin-config.lsp.lsp-signature")
     end,
+    enabled = false,
   },
 
   {
@@ -404,6 +408,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-lsp-inlay-hints")
     end,
+    enabled = false,
   },
 
   {
@@ -499,8 +504,6 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-colorful-winsep")
     end,
-    -- WARN: conflict with lspsaga(outline)
-    enabled = false,
   },
 
   -- neodev for lua in neovim

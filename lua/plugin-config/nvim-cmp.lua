@@ -1,9 +1,10 @@
 local status, cmp = pcall(require, "cmp")
 if not status then
-  print("cmp is not installed")
+  print("nvim-cmp is not installed")
   return
 end
-local lspkind = require("lspkind")
+-- NOTE: Disable LSP
+-- local lspkind = require("lspkind")
 
 cmp.setup({
   snippet = {
@@ -31,10 +32,10 @@ cmp.setup({
     { name = "neorg" },
   }),
   formatting = {
-    format = lspkind.cmp_format({
-      writh_text = false,
-      maxwidth = 50,
-    }),
+    -- format = lspkind.cmp_format({
+    --   writh_text = false,
+    --   maxwidth = 50,
+    -- }),
   },
 })
 

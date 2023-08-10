@@ -103,39 +103,6 @@ map("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
 map("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts)
 map("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts)
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
-map("n", "<tab>d", "<cmd>Telescope lsp_definitions<cr>", opts)
-map("n", "<tab>i", "<cmd>Telescope lsp_implementations<cr>", opts)
-map("n", "<tab>u", "<cmd>Telescope lsp_references<cr>", opts)
-
--- bufferline
--- map("n", "gK", "<cmd>BufferLineMoveNext<CR>", opts)
--- map("n", "gJ", "<cmd>BufferLineMovePrev<CR>", opts)
--- map("n", "gP", "<cmd>BufferLineTogglePin<CR>", opts)
-
--- lspsaga
-map("n", "<tab>l", "<Cmd>Lspsaga show_line_diagnostics<cr>", opts)
-map("n", "<tab>e", "<Cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
-map("n", "<leader>t", "<Cmd>Lspsaga outline<cr>", opts)
-map("n", "]e", "<Cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-map("n", "[e", "<Cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
-map("n", "<tab>h", "<Cmd>Lspsaga hover_doc<cr>", opts)
-map("n", "<tab>f", "<Cmd>Lspsaga finder<cr>", opts)
-map("n", "<tab>p", "<Cmd>Lspsaga peek_definition<cr>", opts)
-map("n", "<tab>r", "<Cmd>Lspsaga rename<cr>", opts)
-
--- basic lsp api
--- map("n", "<tab>d", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
--- map("n", "<tab>i", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
--- map("n", "<tab>u", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-
-if vim.fn.has("mac") == 1 then
-  map("n", "<M-.>", "<Cmd>Lspsaga code_action<cr>", opts)
-else
-  map("n", "<A-.>", "<Cmd>Lspsaga code_action<cr>", opts)
-end
-
--- neogit
--- map("n", "<leader>gg", "<Cmd>Neogit<cr>", opts)
 
 -- vim-fugitive
 map("n", "<leader>gg", "<Cmd>Gtabedit :<cr>", opts)
