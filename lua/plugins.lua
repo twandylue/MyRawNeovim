@@ -148,6 +148,14 @@ local plugins = {
   "easymotion/vim-easymotion",
 
   {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("plugin-config.nvim-comment")
+    end,
+    lazy = false,
+  },
+
+  {
     "folke/todo-comments.nvim",
     config = function()
       require("plugin-config.nvim-todo-comments")
