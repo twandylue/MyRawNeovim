@@ -46,6 +46,9 @@ formatter.setup({
     python = {
       require("formatter.filetypes.python").black,
     },
+    rust = {
+      require("formatter.filetypes.rust").rustfmt,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
