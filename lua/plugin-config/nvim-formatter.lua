@@ -54,6 +54,9 @@ formatter.setup({
     cpp = {
       require("formatter.filetypes.cpp").clangformat,
     },
+    cs = {
+      require("formatter.filetypes.cs").dotnetformat,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
