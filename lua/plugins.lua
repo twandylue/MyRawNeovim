@@ -383,6 +383,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-mason")
     end,
+    enabled = false,
   },
 
   {
@@ -452,6 +453,7 @@ local plugins = {
       require("plugin-config.nvim-fzf-lua")
     end,
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    enabled = false,
   },
 
   -- rest.nvim(http client)
