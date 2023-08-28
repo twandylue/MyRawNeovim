@@ -30,6 +30,7 @@ cmp.setup({
   sources = cmp.config.sources({
     -- NOTE: Disable LSP
     -- { name = "nvim_lsp" },
+    { name = "luasnip", option = { use_show_condition = false } },
     { name = "buffer" },
     { name = "neorg" },
   }),
