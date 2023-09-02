@@ -62,70 +62,11 @@ else
   map("n", "<A-right>", ":vertical res -3<Enter>", opts)
 end
 
--- With Plugins
-map("n", "<leader>e", "<cmd>Oil<CR>", opts)
-vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
-
--- gitsigns
--- NOTE: <c-w>w => could focus on preview window
-map("n", "<leader>g]", "<cmd>Gitsigns next_hunk<CR>", opts)
-map("n", "<leader>g[", "<cmd>Gitsigns prev_hunk<CR>", opts)
-map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", opts)
-map("v", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", opts)
-map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", opts)
-map("v", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", opts)
-map("n", "<leader>gS", "<cmd>Gitsigns stage_buffer<CR>", opts)
-map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", opts)
-map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", opts)
-map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", opts)
-map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", opts)
-map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
-map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", opts)
-map("n", "<leader>gD", '<cmd>Gitsigns diffthis "~"<CR>', opts)
--- map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
-
 -- easy-motion
 map("n", "<leader>g/", "<Plug>(easymotion-sn)", opts)
 
--- Telescope
-map("n", "<leader>.", "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts)
-map("n", "<leader>g.", "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts)
-map("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
-map("n", "[fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
-map("n", "[s", '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>', opts)
-map("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
-map("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
-map("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts)
-map("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
-
 -- vim-fugitive
 map("n", "<leader>gg", "<Cmd>Gtabedit :<cr>", opts)
-
--- Toggleterm
-function _G.set_terminal_keymaps()
-  local termOpts = { buffer = 0 }
-  vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], termOpts)
-  vim.keymap.set("t", "<C-[>", [[<Esc>]], termOpts)
-  vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], termOpts)
-  vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], termOpts)
-  vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], termOpts)
-  vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], termOpts)
-end
-
-if vim.fn.has("mac") == 1 then
-  vim.keymap.set("n", "<M-\\>", [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts) -- open terminal on current directory
-else
-  vim.keymap.set("n", "<A-\\>", [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts)
-end
-
-vim.keymap.set("n", "<C-\\>", [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on current root path(neovim)
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
--- Only available in *.http
-map("n", "<leader>cc", "<Plug>RestNvim", opts)
 
 -- NOTE: Setting for Neovide
 if vim.g.neovide then
