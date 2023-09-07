@@ -456,16 +456,6 @@ local plugins = {
     enabled = false,
   },
 
-  -- rest.nvim(http client)
-  {
-    "rest-nvim/rest.nvim",
-    config = function()
-      require("plugin-config.nvim-rest")
-    end,
-    ft = { "http" },
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
   -- vim sugar
   "tpope/vim-eunuch",
   "tpope/vim-unimpaired",
