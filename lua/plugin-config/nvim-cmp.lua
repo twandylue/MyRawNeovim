@@ -7,23 +7,22 @@ end
 -- local lspkind = require("lspkind")
 
 cmp.setup({
-  -- NOTE: Disable LSP
-  -- snippet = {
-  --   expand = function(args)
-  --     require("luasnip").lsp_expand(args.body)
-  --   end,
-  -- },
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+  },
   mapping = cmp.mapping.preset.insert({
     ["<C-y>"] = cmp.mapping.scroll_docs(-4),
     ["<C-e>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete({}),
-    -- ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-c>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
     ["<TAB>"] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
+      behavior = cmp.ConfirmBehavior.insert,
       select = true,
     }),
   }),
@@ -32,7 +31,6 @@ cmp.setup({
     -- { name = "nvim_lsp" },
     { name = "luasnip", option = { use_show_condition = false } },
     { name = "buffer" },
-    { name = "neorg" },
   }),
   formatting = {
     -- NOTE: Disable LSP

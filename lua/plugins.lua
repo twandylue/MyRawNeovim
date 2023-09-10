@@ -301,6 +301,8 @@ local plugins = {
       -- NOTE: Disable LSP
       -- "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
       require("plugin-config.nvim-cmp")
@@ -393,7 +395,7 @@ local plugins = {
       require("plugin-config.nvim-luasnip")
     end,
     build = "make install_jsregexp",
-    dependencies = { "rafamadriz/friendly-snippets", "saadparwaiz1/cmp_luasnip" },
+    dependencies = { "rafamadriz/friendly-snippets" },
   },
 
   -- File icons
@@ -418,6 +420,7 @@ local plugins = {
     -- ref: https://github.com/nvim-neorg/neorg
     build = ":Neorg sync-parsers", -- This is the important bit!
     dependencies = { { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" }, { "nvim-neorg/neorg-telescope" } },
+    enabled = false,
   },
 
   {
@@ -428,7 +431,7 @@ local plugins = {
   },
 
   -- neodev for lua in neovim
-  "folke/neodev.nvim",
+  { "folke/neodev.nvim", enabled = false },
 
   -- lint
   {
