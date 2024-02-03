@@ -411,19 +411,6 @@ local plugins = {
   "tommcdo/vim-exchange",
 
   {
-    "nvim-neorg/neorg",
-    config = function()
-      require("plugin-config.nvim-neorg")
-      require("plugin-config.nvim-neorg-telescope")
-    end,
-    -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
-    -- ref: https://github.com/nvim-neorg/neorg
-    build = ":Neorg sync-parsers", -- This is the important bit!
-    dependencies = { { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" }, { "nvim-neorg/neorg-telescope" } },
-    enabled = false,
-  },
-
-  {
     "nvim-zh/colorful-winsep.nvim",
     config = function()
       require("plugin-config.nvim-colorful-winsep")
@@ -470,7 +457,14 @@ local plugins = {
       require("plugin-config.nvim-copilot")
     end,
   },
+
+  -- Gen docs
   { "vim-scripts/DoxygenToolkit.vim" },
+
+  -- Open big files
+  {
+    "LunarVim/bigfile.nvim",
+  },
 }
 
 return plugins
