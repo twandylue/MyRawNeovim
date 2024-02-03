@@ -52,7 +52,9 @@ ts.setup({
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = { "markdown" },
-    disable = { "help" },
+    disable = function(lang, bufnr) -- Disable in large buffers
+      return lang == "help" or vim.api.nvim_buf_line_count(bufnr) > 5000
+    end,
   },
   indent = {
     enable = true,
