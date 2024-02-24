@@ -7,6 +7,7 @@ end
 -- NOTE: use the default linter in lsp. For example: sh, yaml,
 lint.linters_by_ft = {
   markdown = { "markdownlint" },
+  python = { "pylint" },
 }
 
 -- NOTE: lint on save
