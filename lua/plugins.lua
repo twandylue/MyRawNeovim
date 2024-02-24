@@ -375,9 +375,6 @@ local plugins = {
   -- adapter for debuger
   {
     "mfussenegger/nvim-dap",
-    config = function()
-      -- require("plugin-config.nvim-dap")
-    end,
   },
 
   -- ui for dap
@@ -386,20 +383,7 @@ local plugins = {
     dependencies = "mfussenegger/nvim-dap",
     event = "VeryLazy",
     config = function()
-      local dap, dapui = require("dap"), require("dapui")
-      dapui.setup()
-      dap.listeners.before.attach.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.launch.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited.dapui_config = function()
-        dapui.close()
-      end
+      require("plugin-config.nvim-dap-ui")
     end,
   },
 
@@ -413,7 +397,7 @@ local plugins = {
     enabled = true,
   },
 
-  -- manage debuger
+  -- Debuger manager
   {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
@@ -422,10 +406,7 @@ local plugins = {
       "mfussenegger/nvim-dap",
     },
     config = function()
-      require("mason-nvim-dap").setup({
-        ensure_installed = { "codelldb" },
-        handlers = {}, -- sets up dap in the predefined manner
-      })
+      require("plugin-config.mason-nvim-dap")
     end,
   },
 
