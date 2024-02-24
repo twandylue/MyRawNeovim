@@ -372,10 +372,35 @@ local plugins = {
 
   "nvim-lua/plenary.nvim",
 
-  -- TODO: still in studying...
-  -- for Debug
+  -- adapter for debuger
   {
     "mfussenegger/nvim-dap",
+    config = function()
+      -- require("plugin-config.nvim-dap")
+    end,
+  },
+
+  -- ui for dap
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    config = function()
+      local dap, dapui = require("dap"), require("dapui")
+      dapui.setup()
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
+    end,
   },
 
   -- Mason lsp server installer and manager
@@ -385,7 +410,23 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-mason")
     end,
-    enabled = false,
+    enabled = true,
+  },
+
+  -- manage debuger
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require("mason-nvim-dap").setup({
+        ensure_installed = { "codelldb" },
+        handlers = {}, -- sets up dap in the predefined manner
+      })
+    end,
   },
 
   {
