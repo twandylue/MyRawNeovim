@@ -115,6 +115,7 @@ local plugins = {
   {
     "nvim-telescope/telescope-project.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
+    enabled = false,
   },
 
   {

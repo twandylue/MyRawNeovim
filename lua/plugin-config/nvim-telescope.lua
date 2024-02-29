@@ -4,7 +4,7 @@ if not status then
   return
 end
 
-telescope.load_extension("project")
+-- telescope.load_extension("project")
 telescope.load_extension("notify")
 telescope.load_extension("live_grep_args")
 
@@ -253,4 +253,4 @@ vim.api.nvim_set_keymap("n", "<leader>,", '<cmd>lua require("telescope.builtin")
 vim.api.nvim_set_keymap("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
 vim.api.nvim_set_keymap("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts)
 vim.api.nvim_set_keymap("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
