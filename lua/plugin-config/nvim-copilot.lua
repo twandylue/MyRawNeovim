@@ -10,6 +10,7 @@ vim.g.copilot_filetypes = {
   ["go"] = true,
   ["python"] = true,
   ["sh"] = true,
+  ["markdown"] = true,
 }
 
 -- vim.api.nvim_command([[highlight CopilotSuggestion guifg=#555555 ctermfg=8]])
