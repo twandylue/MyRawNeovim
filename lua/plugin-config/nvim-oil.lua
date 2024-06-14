@@ -32,6 +32,7 @@ oil.setup({
     ["<C-v>"] = "actions.select_vsplit",
     ["<C-s>"] = "actions.select_split",
     ["<C-p>"] = "actions.preview",
+    ["<C-t>"] = { "actions.select", opts = { tab = true } },
     ["<Space>e"] = "actions.close",
     ["<Space>q"] = "actions.close",
     ["<C-r>"] = "actions.refresh",
