@@ -57,6 +57,9 @@ formatter.setup({
     cs = {
       require("formatter.filetypes.cs").dotnetformat,
     },
+    java = {
+      require("formatter.filetypes.java").clangformat,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
