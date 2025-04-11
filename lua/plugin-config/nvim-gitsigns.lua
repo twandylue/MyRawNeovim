@@ -4,7 +4,7 @@ if not status then
   return
 end
 
-gitsigns.setup({})
+gitsigns.setup()
 
 -- NOTE: <c-w>w => could focus on preview window
 local opts = {
@@ -26,4 +26,5 @@ vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gD", '<cmd>Gitsigns diffthis "~"<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader>gq", "<cmd>Gitsigns setqflist<CR>", opts)
 -- vim.api.nvim_set_keymap('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)

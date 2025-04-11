@@ -2,7 +2,7 @@ vim.g.copilot_filetypes = {
   ["*"] = false,
   ["javascript"] = true,
   ["typescript"] = true,
-  ["lua"] = false,
+  ["lua"] = true,
   ["rust"] = true,
   ["c"] = true,
   ["cpp"] = true,
@@ -12,6 +12,9 @@ vim.g.copilot_filetypes = {
   ["sh"] = true,
   ["markdown"] = true,
 }
+
+-- Disable Copilot by default
+vim.g.copilot_enabled = false
 
 -- vim.api.nvim_command([[highlight CopilotSuggestion guifg=#555555 ctermfg=8]])
 -- NOTE:
