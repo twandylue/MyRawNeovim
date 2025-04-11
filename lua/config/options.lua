@@ -2,6 +2,8 @@
 -- vim.wo.colorcolumn = "140"
 -- utf8
 vim.g.encoding = "UTF-8"
+-- disable .editorconfig
+vim.g.editorconfig = false
 vim.o.fileencoding = "utf-8"
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
@@ -66,7 +68,8 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.list = true
-vim.opt.listchars = { trail = ".", eol = "↵", tab = ">~", space = ".", precedes = "<", extends = ">" }
+vim.opt.listchars =
+  { trail = ".", eol = "↵", tab = ">~", space = ".", precedes = "<", extends = ">" }
 -- 补全增强
 vim.o.wildmenu = true
 -- Don't pass messages to |ins-completin menu|
