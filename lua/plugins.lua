@@ -15,7 +15,7 @@ local plugins = {
       vim.api.nvim_command("highlight Cursor guibg=red")
       -- vim.api.nvim_command("hi! LineNr guibg=#2e2d2d ctermbg=none")
     end,
-    enabled = false,
+    enabled = true,
   },
 
   -- colorscheme: gruvbox
@@ -27,7 +27,7 @@ local plugins = {
     config = function()
       require("colorschemes.gruvbox")
     end,
-    enabled = true,
+    enabled = false,
   },
 
   -- colorscheme: catppuccin
@@ -112,6 +112,7 @@ local plugins = {
     "nvim-telescope/telescope-live-grep-args.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
   },
+
   {
     "nvim-telescope/telescope-project.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
@@ -237,6 +238,7 @@ local plugins = {
       require("plugin-config.nvim-dashboard")
     end,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    enabled = false,
   },
 
   {
@@ -244,6 +246,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-zen-mode")
     end,
+    enabled = false,
   },
 
   -- true-zen (like zen-mode and goyo-vim)
@@ -252,6 +255,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-true-zen")
     end,
+    enabled = false,
   },
 
   -- twilight (like limelight)
@@ -260,6 +264,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-twilight")
     end,
+    enabled = false,
   },
 
   {
@@ -289,6 +294,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-toggleterm")
     end,
+    enabled = false,
   },
 
   -- vscode-like pictograms
@@ -308,6 +314,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-cmp")
     end,
+    enabled = false,
   },
 
   -- Configurations for Nvim LSP
@@ -419,6 +426,7 @@ local plugins = {
     end,
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
+    enable = false,
   },
 
   -- File icons
@@ -482,7 +490,7 @@ local plugins = {
   },
 
   -- Gen docs
-  { "vim-scripts/DoxygenToolkit.vim" },
+  { "vim-scripts/DoxygenToolkit.vim", enable = false },
 
   -- Open big files
   {
