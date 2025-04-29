@@ -5,16 +5,13 @@ local diag_enabled = true
 local toggle_diagnostic = function()
   -- if this Neovim version supports checking if diagnostics are diag_enabled
   -- then use that for the current state
-  if vim.diagnostic.is_disabled then
-    diag_enabled = not vim.diagnostic.is_disabled()
-  end
-  diag_enabled = not diag_enabled
+  diag_enabled = not vim.diagnostic.is_enabled()
 
   if diag_enabled then
-    vim.diagnostic.enable()
+    vim.diagnostic.enable(true)
     print("Diagnostic is enabled")
   else
-    vim.diagnostic.disable()
+    vim.diagnostic.enable(false)
     print("Diagnostic is disabled")
   end
 end
