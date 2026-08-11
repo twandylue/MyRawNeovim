@@ -177,6 +177,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-illuminate")
     end,
+    enabled = false,
   },
 
   {
@@ -446,6 +447,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-colorful-winsep")
     end,
+    enabled = false,
   },
 
   -- neodev for lua in neovim
@@ -465,6 +467,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-formatter")
     end,
+    enabled = false,
   },
 
   -- fzf in lua
@@ -487,6 +490,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-copilot")
     end,
+    enable = false,
   },
 
   -- Gen docs
